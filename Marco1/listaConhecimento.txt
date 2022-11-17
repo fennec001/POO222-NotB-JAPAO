@@ -1,0 +1,4 @@
+conhecimentos a serem desmolvidos: 
+1.conhecer o formato JSON e como gravar, navegar e ler os seus dados no Java
+
+2.criação de arquivo Jar
