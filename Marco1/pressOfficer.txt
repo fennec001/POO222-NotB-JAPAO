@@ -1,0 +1,16 @@
+{
+   "pressOfficer":[
+      {
+         "name":"Naruto",
+         "tel1":"+5521989876543",
+         "tel2":"+974992008765",
+         "emailAccount":"naruto@viladafolha.com.br"
+      },
+      {
+         "name":"Sasuke",
+         "tel1":"+5521989876543",
+         "tel2":"+974992008765",
+         "emailAccount":"sasuke@viladafolha.com.br"
+      }
+   ]
+}
