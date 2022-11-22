@@ -1,0 +1,22 @@
+{
+   "committee":[
+      {
+         "name":"Hajime Moriyasu",
+         "nickname":"Hajime",
+         "role":"Main coach",
+         "age":54
+      },
+      {
+         "name":"Saburo Kawabuchi",
+         "nickname":"Saburo",
+         "role":"Consultor",
+         "age":86
+      },
+      {
+         "name":"Kozo Tashima",
+         "nickname":"Kozo",
+         "role":"Main coach",
+         "age":65
+      }
+   ]
+}
