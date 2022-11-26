@@ -5,6 +5,8 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 
 import fifa.NationalTeamInfos;
@@ -26,7 +28,7 @@ public class Japao implements NationalTeamInfos {
 			JSONObject o = new JSONObject(contents);
 			JSONArray players = o.getJSONArray("players");
 			for(int i = 0; i < players.length(); i++) {
-				System.out.println(players.get(i));
+				parsePlayer(players.getJSONObject(i));
 			}
 			System.out.println(jogadores);
 			
@@ -34,6 +36,21 @@ public class Japao implements NationalTeamInfos {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+	}
+	
+	
+	private void parsePlayer(JSONObject  p) {
+		int number  = p.getInt("number");
+		String currentClub = (String) p.get("currentClub");
+		String name = (String) p.get("name");
+		String nickname = (String) p.get("nickname");
+		float weight = p.getFloat("weight");
+		String position = (String) p.get("position");
+		DateTimeFormatter df = DateTimeFormatter.ofPattern("y-M-d");
+		LocalDate birthdate = LocalDate.parse((String) p.get("birthDate"),df);
+		float height = p.getFloat("height");
+		Jogador j = new Jogador(number, name, nickname, height, weight, birthdate, position, currentClub);
+		jogadores.add(j);
 	}
 	
 	@Override
@@ -44,8 +61,13 @@ public class Japao implements NationalTeamInfos {
 
 	@Override
 	public int getOldestPlayer() {
-		// TODO Auto-generated method stub
-		return 12;
+		Jogador oldestPlayer = jogadores.get(0);
+		for(Jogador p: jogadores) {
+			if(p.getAge() > oldestPlayer.getAge()) {
+				oldestPlayer = p;
+			}
+		}
+		return oldestPlayer.getNumber();
 	}
 
 	@Override
@@ -94,5 +116,6 @@ public class Japao implements NationalTeamInfos {
 	public NationalTeamStats getStatsResponsible() {
 		return status;
 	}
+	
 
 }

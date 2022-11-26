@@ -1,6 +1,7 @@
 package module_japao;
 
 import java.time.LocalDate;
+import java.time.temporal.ChronoUnit;
 
 public class Jogador {
 	private int number;
@@ -71,6 +72,12 @@ public class Jogador {
 	public void setCurrentClub(String currentClub) {
 		this.currentClub = currentClub;
 	}
-	
+	public int  getAge() {
+		int age = (int) ChronoUnit.YEARS.between( 
+			    this.getBirthDate() ,
+			    LocalDate.now() 
+			);
+		return age;
+	}
 	
 }
