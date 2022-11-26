@@ -1,0 +1,284 @@
+{
+   "committee":[
+      {
+         "name":"Hajime Moriyasu",
+         "nickname":"Hajime",
+         "role":"Main coach",
+         "age":54
+      },
+      {
+         "name":"Saburo Kawabuchi",
+         "nickname":"Saburo",
+         "role":"Consultor",
+         "age":86
+      },
+      {
+         "name":"Kozo Tashima",
+         "nickname":"Kozo",
+         "role":"Main coach",
+         "age":65
+      }
+   ],
+   "pressOfficer":[
+      {
+         "name":"Naruto",
+         "tel1":"+5521989876543",
+         "tel2":"+974992008765",
+         "emailAccount":"naruto@viladafolha.com.br"
+      },
+      {
+         "name":"Sasuke",
+         "tel1":"+5521989876543",
+         "tel2":"+974992008765",
+         "emailAccount":"sasuke@viladafolha.com.br"
+      }
+   ],
+   "players":[
+      {
+         "number":12,
+         "name":"Shūichi Gonda",
+         "nickname":"Shūichi",
+         "height":1.87,
+         "weight":83,
+         "birthDate":"1989-3-3",
+         "position":"Goalkeeper",
+         "currentClub":"Shimizu S-Pulse"
+      },
+      {
+         "number":1,
+         "name":"Eiji Kawashima",
+         "nickname":"Eiji",
+         "height":1.85,
+         "weight":82,
+         "birthDate":"1983-3-20",
+         "position":"Goalkeeper",
+         "currentClub":"Strasbourg"
+      },
+      {
+         "number":23,
+         "name":"Daniel Schmidt",
+         "nickname":"Daniel",
+         "height":1.97,
+         "weight":88,
+         "birthDate":"1992-2-2",
+         "position":"Goalkeeper",
+         "currentClub":"Sint-Truiden"
+      },
+      {
+         "number":4,
+         "name":"Ko Itakura",
+         "nickname":"Ko",
+         "height":1.88,
+         "weight":75,
+         "birthDate":"1997-1-27",
+         "position":"Centre-back",
+         "currentClub":"Borussia Monchengladbach"
+      },
+      {
+         "number":26,
+         "name":"Hiroki Ito",
+         "nickname":"Hiroki",
+         "height":1.88,
+         "weight":81,
+         "birthDate":"1999-4-12",
+         "position":"Defender-Centre-back",
+         "currentClub":"VFB Stuttgart"
+      },
+      {
+         "number":3,
+         "name":"Shogo Taniguchi",
+         "nickname":"Shogo",
+         "height":1.83,
+         "weight":75,
+         "birthDate":"1991-7-15",
+         "position":"Centre-Back",
+         "currentClub":"Kawasaki Frontale"
+      },
+      {
+         "number":22,
+         "name":"Maya Yoshida",
+         "nickname":"Maya",
+         "height":1.89,
+         "weight":78,
+         "birthDate":"1988-8-24",
+         "position":"Centre-Back",
+         "currentClub":"Schalke 04"
+      },
+      {
+         "number":5,
+         "name":"Yuto Nagatomo",
+         "nickname":"Yuto",
+         "height":1.70,
+         "weight":68,
+         "birthDate":"1986-10-12",
+         "position":"Full-Back",
+         "currentClub":"FC Tokyo"
+      },
+      {
+         "number":16,
+         "name":"Takehiro Tomiyasu",
+         "nickname":"Takehiro",
+         "height":1.88,
+         "weight":84,
+         "birthDate":"1998-11-5",
+         "position":"Centre-Back,Full-Back",
+         "currentClub":"Arsenal"
+      },
+      {
+         "number":2,
+         "name":"Miki Yamane",
+         "nickname":"Miki",
+         "height":1.78,
+         "weight":72,
+         "birthDate":"1993-11-22",
+         "position":"Right-Back",
+         "currentClub":"Kawasaki Frontale"
+      },
+      {
+         "number":19,
+         "name":"Hiroki Sakai",
+         "nickname":"Hiroki",
+         "height":1.85,
+         "weight":78,
+         "birthDate":"1990-4-12",
+         "position":"Right-Back",
+         "currentClub":"Urawa Red Diamonds"
+      },
+      {
+         "number":13,
+         "name":"Hidemasa Morita",
+         "nickname":"Hidemasa",
+         "height":1.77,
+         "weight":75,
+         "birthDate":"1995-3-10",
+         "position":"Defensive-Midfielder",
+         "currentClub":"Sporting CP"
+      },
+      {
+         "number":6,
+         "name":"Wataru Endo",
+         "nickname":"Wataru",
+         "height":1.78,
+         "weight":76,
+         "birthDate":"1993-2-9",
+         "position":"Defensive-Midfielder",
+         "currentClub":"VfB Stuttgart"
+      },
+      {
+         "number":17,
+         "name":"Ao Tanaka",
+         "nickname":"Ao",
+         "height":1.80,
+         "weight":74,
+         "birthDate":"1998-10-10",
+         "position":"Midfielder",
+         "currentClub":"Fortuna Dusseldorf"
+      },
+      {
+         "number":7,
+         "name":"Gaku Shibasaki",
+         "nickname":"Gaku",
+         "height":1.75,
+         "weight":70,
+         "birthDate":"1992-3-28",
+         "position":"Midfielder",
+         "currentClub":"Leganés"
+      },
+      {
+         "number":15,
+         "name":"Daichi Kamada",
+         "nickname":"Daichi",
+         "height":1.84,
+         "weight":72,
+         "birthDate":"1996-8-5",
+         "position":"Attacking-Midfielder,Forward",
+         "currentClub":"Eintracht Frankfurt"
+      },
+      {
+         "number":10,
+         "name":"Takumi Minamino",
+         "nickname":"Takumi",
+         "height":1.75,
+         "weight":67,
+         "birthDate":"1995-1-16",
+         "position":"Attacking-Midfielder,Winger",
+         "currentClub":"Monaco"
+      },
+      {
+         "number":9,
+         "name":"Kaoru Mitoma",
+         "nickname":"Kaoru",
+         "height":1.78,
+         "weight":73,
+         "birthDate":"1997-3-20",
+         "position":"Winger",
+         "currentClub":"Brighton & Hove Albion"
+      },
+      {
+         "number":25,
+         "name":"Daizen Maeda",
+         "nickname":"Daizen",
+         "height":1.73,
+         "weight":67,
+         "birthDate":"1997-9-20",
+         "position":"Winger,Forward",
+         "currentClub":"Celtic"
+      },
+      {
+         "number":24,
+         "name":"Yuki Soma",
+         "nickname":"Yuki",
+         "height":1.66,
+         "weight":68,
+         "birthDate":"1997-2-25",
+         "position":"Winger",
+         "currentClub":"Nagoya Grampus"
+      },
+      {
+         "number":8,
+         "name":"Ritsu Doan",
+         "nickname":"Ritsu",
+         "height":1.72,
+         "weight":70,
+         "birthDate":"1998-6-24",
+         "position":"Winger",
+         "currentClub":"SC Freiburg"
+      },
+      {
+         "number":11,
+         "name":"Takefusa Kubo",
+         "nickname":"Takefusa",
+         "height":1.73,
+         "weight":64,
+         "birthDate":"2001-6-4",
+         "position":"Winger",
+         "currentClub":"Real Sociedad"
+      },
+      {
+         "number":18,
+         "name":"Takuma Asano",
+         "nickname":"Takuma",
+         "height":1.73,
+         "weight":71,
+         "birthDate":"1994-11-10",
+         "position":"Winger,Forward",
+         "currentClub":"VfL Bochum"
+      },
+      {
+         "number":20,
+         "name":"Shuto Machino",
+         "nickname":"Shuto",
+         "height":1.84,
+         "weight":77,
+         "birthDate":"1999-11-30",
+         "position":"Striker",
+         "currentClub":"Shonan Bellmare"
+      }
+   ]
+}
+
+
+
+
+
+ 

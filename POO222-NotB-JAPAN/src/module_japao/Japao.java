@@ -1,6 +1,8 @@
 package module_japao;
 import java.awt.Image;
 import java.awt.image.BufferedImage;
+import java.io.IOException;
+import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
@@ -8,12 +10,31 @@ import java.util.ArrayList;
 import fifa.NationalTeamInfos;
 import fifa.NationalTeamStats;
 
+import org.json.JSONArray;
+import org.json.JSONObject;
 public class Japao implements NationalTeamInfos {
 	
 	private ArrayList<Jogador> jogadores = new ArrayList<Jogador>();
 	private ArrayList<MembroComiteTecnico> comite = new ArrayList<MembroComiteTecnico>();
 	private ArrayList<Dirigente> dirigente = new ArrayList<Dirigente>();
 	private Status status = new Status();
+	
+	public Japao() {
+		String file = "../POO222-NotB-JAPAN/json/playerInfo.json";
+		try {
+			String contents = new String(Files.readAllBytes(Paths.get(file)));
+			JSONObject o = new JSONObject(contents);
+			JSONArray players = o.getJSONArray("players");
+			for(int i = 0; i < players.length(); i++) {
+				System.out.println(players.get(i));
+			}
+			System.out.println(jogadores);
+			
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
 	
 	@Override
 	public int getHowManyMembers() {
