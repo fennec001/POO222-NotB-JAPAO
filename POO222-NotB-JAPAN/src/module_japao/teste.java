@@ -7,6 +7,9 @@ public class teste {
 		Japao japao = new Japao();
 		
 		japao.getOldestPlayer();
+		japao.getYoungestPlayer();
+		japao.getAverageAge();
+		japao.getPlayer(1);
 	}
 
 }

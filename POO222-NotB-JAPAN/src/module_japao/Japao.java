@@ -72,20 +72,38 @@ public class Japao implements NationalTeamInfos {
 
 	@Override
 	public int getYoungestPlayer() {
-		// TODO Auto-generated method stub
-		return 1;
+		Jogador youngestPlayer = jogadores.get(0);
+		for(Jogador p: jogadores) {
+			if(p.getAge() < youngestPlayer.getAge()) {
+				youngestPlayer = p;
+			}
+		}
+		return youngestPlayer.getNumber();
 	}
 
 	@Override
 	public double getAverageAge() {
-		// TODO Auto-generated method stub
-		return 22;
+		double totalAge = 0;
+		for(Jogador p: jogadores) {
+			totalAge+= p.getAge();
+		}
+		return totalAge/jogadores.size();
 	}
 
 	@Override
 	public String getPlayer(int number) {
-		String str = "{number:12, name:'Shuichi Gonda', nickname:'Shūichi', height:1,87, weight:83, birthDate:'1989-3-3', position:'Goalkeeper', currentClub:'Shimizu S-Pulse'}";
-		return str;
+		Jogador selecionado = null;
+		for(Jogador p: jogadores) {
+			if(p.getNumber() == number) {
+				selecionado = p;
+			}
+		}
+		if(selecionado != null) {
+			JSONObject jsonObject = new JSONObject(selecionado);
+			String myJson = jsonObject.toString();
+			return myJson;
+		}
+		return "Jogador não encontrado";
 	}
 
 	@Override
