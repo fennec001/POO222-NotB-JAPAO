@@ -114,7 +114,8 @@ public class Japao implements NationalTeamInfos {
 
 	@Override
 	public NationalTeamStats getStatsResponsible() {
-		return status;
+	Status stats = new Status();
+		return stats;
 	}
 	
 
