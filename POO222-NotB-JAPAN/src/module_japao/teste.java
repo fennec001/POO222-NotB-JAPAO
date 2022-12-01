@@ -10,6 +10,7 @@ public class teste {
 		japao.getYoungestPlayer();
 		japao.getAverageAge();
 		japao.getPlayer(1);
+		japao.getHowManyMembers();
 	}
 
 }
