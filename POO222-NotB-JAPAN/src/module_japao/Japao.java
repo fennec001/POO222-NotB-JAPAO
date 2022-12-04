@@ -3,6 +3,9 @@ import java.awt.Image;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
+import java.io.InputStream;
+import java.net.URISyntaxException;
+import java.net.URL;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
@@ -25,9 +28,9 @@ public class Japao implements NationalTeamInfos {
 	private Status status = new Status();
 	
 	public Japao() {
-		String file = "../POO222-NotB-JAPAN/json/playerInfo.json";
+		InputStream file = Japao.class.getResourceAsStream("/playerInfo.json");
 		try {
-			String contents = new String(Files.readAllBytes(Paths.get(file)));
+			String contents = new String(file.readAllBytes());
 			JSONObject o = new JSONObject(contents);
 			parsePlayer(o);
 			parseComite(o);
@@ -158,13 +161,21 @@ public class Japao implements NationalTeamInfos {
 
 	@Override
 	public Image getFlagImage() {
-		BufferedImage squir1 = createImage("images/Squirrel/Squirrel1.png");
+		InputStream file = Japao.class.getResourceAsStream("/Flag_of_Japan.svg.png");
+		BufferedImage squir1 = null;
+		try {
+			squir1 = ImageIO.read(file);
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		return squir1;
 	}
 
 	@Override
 	public Path getTechnicalCommittee() {
-		Path path = Paths.get("../POO222-NotB-JAPAN/json/playerInfo.json"); 
+		// método precisa ser feito após dúvida com professor ser sanada
+		Path path = null;
 		return path;
 	}
 
@@ -174,17 +185,5 @@ public class Japao implements NationalTeamInfos {
 		return stats;
 	}
 	
-	private BufferedImage createImage(String x){
-	    BufferedImage bufferedImage;
-	    try {
-
-	        bufferedImage = ImageIO.read(new File(x));
-
-	        return bufferedImage;
-	    } catch (IOException e) {
-	        e.printStackTrace();
-	    }
-	    return null;
-	}
 
 }
