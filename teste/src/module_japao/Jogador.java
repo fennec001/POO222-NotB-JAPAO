@@ -31,6 +31,10 @@ public class Jogador {
 		return howManyCalls;
 	}
 
+	public void setHowManyCalls(int howManyCalls) {
+		this.howManyCalls = howManyCalls;
+	}
+
 	public void incHowManyCalls() {
 		howManyCalls++;
 	}

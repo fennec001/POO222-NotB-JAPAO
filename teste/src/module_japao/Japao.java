@@ -3,6 +3,8 @@ package module_japao;
 import java.awt.Image;
 import java.awt.image.BufferedImage;
 import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.InputStream;
@@ -14,6 +16,7 @@ import java.nio.file.Paths;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
+import java.io.FileInputStream;
 
 import javax.imageio.ImageIO;
 
@@ -28,6 +31,7 @@ public class Japao implements NationalTeamInfos {
 	private ArrayList<Jogador> jogadores = new ArrayList<Jogador>();
 	private ArrayList<MembroComiteTecnico> comite = new ArrayList<MembroComiteTecnico>();
 	private ArrayList<Dirigente> dirigentes = new ArrayList<Dirigente>();
+	private ArrayList<Integer> calls = new ArrayList<Integer>();
 	private Status status = new Status();
 	private int howManyQuestions;
 
@@ -39,23 +43,31 @@ public class Japao implements NationalTeamInfos {
 		howManyQuestions++;
 	}
 
+	// como o caminho relativo do arquivo do jar
 	public Japao() {
 		InputStream file = Japao.class.getResourceAsStream("/playerInfo.json");
+
 		try {
 			String contents = new String(file.readAllBytes());
 			JSONObject o = new JSONObject(contents);
 			parsePlayer(o);
 			parseComite(o);
 			parsePressOfficer(o);
+			file.close();
+			setCalltoPlayer();
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+
 	}
 
+	// criar um json com duas estruturas
+	// uma de totalperguntas e uma o
 	private void parsePlayer(JSONObject o) {
 		JSONArray players = o.getJSONArray("players");
 		for (int i = 0; i < players.length(); i++) {
+
 			JSONObject p = players.getJSONObject(i);
 			int number = p.getInt("number");
 			String currentClub = (String) p.get("currentClub");
@@ -66,6 +78,7 @@ public class Japao implements NationalTeamInfos {
 			DateTimeFormatter df = DateTimeFormatter.ofPattern("y-M-d");
 			LocalDate birthdate = LocalDate.parse((String) p.get("birthDate"), df);
 			float height = p.getFloat("height");
+
 			Jogador j = new Jogador(number, name, nickname, height, weight, birthdate, position, currentClub);
 			jogadores.add(j);
 		}
@@ -165,7 +178,11 @@ public class Japao implements NationalTeamInfos {
 
 			if (d.getName().equals("Naruto") || d.getName().equals("Sasuke")) {
 				dirigente = d;
-				aux += d.descreva();
+
+				JSONObject jsonObject = new JSONObject(dirigente);
+				String myJson = jsonObject.toString();
+
+				aux += myJson;
 				aux += "\n";
 			}
 
@@ -237,7 +254,7 @@ public class Japao implements NationalTeamInfos {
 			// TODO: handle exception
 		}
 		Path path = Paths.get(file.getAbsolutePath());
-
+		incHowManyQuestions();
 		return path;
 	}
 
@@ -246,6 +263,60 @@ public class Japao implements NationalTeamInfos {
 		Status stats = new Status();
 		incHowManyQuestions();
 		return stats;
+	}
+
+	public void parseQuestions() {
+		JSONObject objeto = new JSONObject();
+
+		File file = new File(".//json//playerStatus.json");
+
+		try {
+			FileWriter fw = new FileWriter(file);
+			fw.append("{\n" + '"' + "stats" + '"' + ":[\n");
+			JSONObject json = new JSONObject();
+			json.put("HowManyQuestions", getHowManyQuestions());
+			fw.append(json.toString());
+			fw.append(" ],\n" + '"' + "jogadores" + '"' + ":[\n");
+
+			for (int i = 0; i < jogadores.size(); i++) {
+				Jogador j = jogadores.get(i);
+				json = new JSONObject();
+				json.put("camisa", j.getNumber());
+				json.put("calls", j.getHowManyCalls());
+				if (i == (jogadores.size() - 1)) {
+					fw.append(json.toString());
+				} else {
+					fw.append(json.toString() + ",");
+				}
+			}
+			fw.append("] \n }");
+			fw.close();
+
+		} catch (
+
+		IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+		System.out.println(file.toString());
+
+	}
+
+	public void setCalltoPlayer() throws FileNotFoundException {
+		InputStream arquivo = new FileInputStream("./json/playerInfo.json");
+		try {
+			String contents = new String(arquivo.readAllBytes());
+			JSONObject o = new JSONObject(contents);
+			JSONArray players = o.getJSONArray("jogadores");
+			for (int i = 0; i < players.length(); i++) {
+				JSONObject p = players.getJSONObject(i);
+				jogadores.get(i).setHowManyCalls(p.getInt("calls"));
+			}
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+
 	}
 
 }
