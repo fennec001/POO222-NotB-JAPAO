@@ -1,0 +1,3 @@
+{"role":"Main coach","name":"Hajime","nickname":"Hajime","age":54}
+{"role":"Consultor","name":"Saburo","nickname":"Saburo","age":86}
+{"role":"Main coach","name":"Kozo","nickname":"Kozo","age":65}
