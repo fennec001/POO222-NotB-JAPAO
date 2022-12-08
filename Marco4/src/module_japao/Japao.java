@@ -45,7 +45,7 @@ public class Japao implements NationalTeamInfos {
 
 	// como o caminho relativo do arquivo do jar
 	public Japao() {
-		InputStream file = Japao.class.getResourceAsStream("/playerInfo.json");
+		InputStream file = Japao.class.getResourceAsStream(".//json//playerInfo.json");
 
 		try {
 			String contents = new String(file.readAllBytes());
@@ -304,7 +304,7 @@ public class Japao implements NationalTeamInfos {
 	}
 
 	public void setCalltoPlayer() throws FileNotFoundException {
-		InputStream arquivo = new FileInputStream("./json/playerStatus.json");
+		InputStream arquivo = new FileInputStream("./json/playerInfo.json");
 		try {
 			String contents = new String(arquivo.readAllBytes());
 			JSONObject o = new JSONObject(contents);

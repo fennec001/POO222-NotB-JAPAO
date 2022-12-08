@@ -6,10 +6,8 @@ public class teste {
 
 	public static void main(String[] args) {
 
-		Japao japao = new Japao();
-		// japao.setCalltoPlayer
-		NationalTeamStats Stats = japao.getStatsResponsible();
-		System.out.println(Stats.getHowManyCallsToPlayer(1));
+		Japao j = new Japao();
+		j.getAverageAge();
 	}
 
 }
